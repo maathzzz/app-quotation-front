@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #FFFFFF;
+    --black: #333333;
+    
+    --blue-500: #009FE3;
+    --blue-700: #1A1D56;
+}
+
+body {
+    background: var(--white-background);
+    -webkit-font-smoothin: antialiased;
+}
+
+body, input, textarea, button {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+}

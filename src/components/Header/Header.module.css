@@ -1,0 +1,64 @@
+.header {
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999; */
+    width: 100vw; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+
+    align-items: center;
+
+    height: 5rem;
+    background: var(--blue-700);
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.header img {
+    width: 8.188rem;
+    /* width: 7.188rem;  */
+    cursor: pointer;
+}
+
+.buyCripto {
+    width: 8.375rem;
+    height: 2.688rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--white);
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login {
+    width: 7.375rem;
+    height: 2.688rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--blue-500);
+    color: var(--white);
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.options a {
+    color: var(--white);
+    text-decoration: none;
+
+    transition: 200ms;
+}
+
+.options a:hover{
+    color: var(--blue-500);
+}
