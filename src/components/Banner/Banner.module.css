@@ -8,7 +8,7 @@
 .heading {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: fle;
     flex-direction: column;
     width: 50vw;
     height: auto;
@@ -28,20 +28,24 @@
     font-weight: 700;
     font-size: 0.875rem;
     text-transform: uppercase;
+    margin-bottom: 1rem;
 }
 
 .title {
     display: flex;
     justify-content: flex-start;
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 0rem;
+    line-height: 120px;
 }
 
 .zuviah1 {
-    font-size: 6rem;
+    font-size: 8rem;
     color: var(--black)
 }
 
 .cotacaoh1 {
-    font-size: 6rem;
+    font-size: 7rem;
     color: var(--blue-500)
 }
+
