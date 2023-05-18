@@ -1,4 +1,47 @@
 .banner {
     width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50vw;
+    height: auto;
     margin-top: 4rem;
+}
+
+.heading span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13rem;
+    height: 2rem;
+    margin-top: 1rem;
+    background: #d4effa;
+    border-radius: 2000px;
+    color: var(--blue-500);
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.zuviah1 {
+    font-size: 6rem;
+    color: var(--black)
+}
+
+.cotacaoh1 {
+    font-size: 6rem;
+    color: var(--blue-500)
 }

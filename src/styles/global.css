@@ -10,10 +10,12 @@
     
     --blue-500: #009FE3;
     --blue-700: #1A1D56;
+
+    --red-500: #ad2424;
 }
 
 body {
-    background: var(--white-background);
+    background: #f1f6ff;
     -webkit-font-smoothin: antialiased;
 }
 

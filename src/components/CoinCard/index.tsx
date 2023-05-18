@@ -10,7 +10,7 @@ interface CoinCardProps {
 
 export function CoinCard({ code, bid, high, low, pctChange}: CoinCardProps) {
   return (
-    <div className={styles.cardCrypto}>
+    <div className={pctChange >= 0 ? styles.cardCrypto: styles.cardCryptoNegative}>
             <div className={styles.cardHeader}>
                 <img src="#" />
                 <span> {'>'} </span>

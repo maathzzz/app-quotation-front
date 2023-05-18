@@ -50,6 +50,7 @@ export function Home() {
         .catch(error => {
         console.error('Erro de autenticação:', error);
     });
+    console.log(coinList)
 
     }, [coinList])
 

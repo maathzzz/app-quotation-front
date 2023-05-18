@@ -12,7 +12,7 @@
     align-items: center;
 
     height: 5rem;
-    background: var(--blue-700);
+    /* background: var(--blue-700); */
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1); 
 }
 
@@ -31,6 +31,11 @@
 
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
+    color: var(--blue-700);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .login {
@@ -53,7 +58,9 @@
 }
 
 .options a {
-    color: var(--white);
+    color: var(--black);
+    font-weight: 700;
+    font-size: 1.075rem;
     text-decoration: none;
 
     transition: 200ms;
