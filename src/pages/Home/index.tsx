@@ -11,6 +11,7 @@ interface bala {
     high: string,
     low: string,
     pctChange: number,
+    image: string,
 }
 
 export function Home() {
@@ -50,7 +51,8 @@ export function Home() {
         .catch(error => {
         console.error('Erro de autenticação:', error);
     });
-    console.log(coinList)
+    
+    // console.log(coinList)
 
     }, [coinList])
 
@@ -68,6 +70,7 @@ export function Home() {
                         high={coin.high} 
                         low={coin.low} 
                         pctChange={coin.pctChange}
+                        image={coin.image}
                     />
                 )
             })}

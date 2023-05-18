@@ -21,7 +21,7 @@
 .cardHeader {
     display: flex;
     justify-content: space-between;
-    margin-left: 2rem;
+    margin-left: 1.5rem;
     margin-right: 2rem;
     margin-top: 1.5rem;
     cursor: pointer;
@@ -41,7 +41,7 @@
     display: flex;
     flex-direction: column;
 
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
     margin-left: 1.75rem;
     color: var(--blue-700)
 }
