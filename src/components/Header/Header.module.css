@@ -27,12 +27,12 @@
     height: 2.688rem;
     border-radius: 8px;
     border: none;
-    background: var(--white);
+    background: var(--blue-700);
 
-    font-weight: bold;
+    font-weight: 400;
     cursor: pointer;
     text-decoration: none;
-    color: var(--blue-700);
+    color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
