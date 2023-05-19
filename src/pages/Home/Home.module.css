@@ -11,6 +11,10 @@
 }
 
 .loading {
-    margin-top: 10rem;
-    margin-left: 58rem;
+    display: flex;
+    margin-top: 4rem;
+    width: 100vw;
+    height: 10rem;
+    justify-content: center;
+    align-items: center;
 }
