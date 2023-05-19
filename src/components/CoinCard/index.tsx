@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import styles from './CoinCard.module.css'
 
 interface CoinCardProps {
@@ -10,8 +11,9 @@ interface CoinCardProps {
 }
 
 export function CoinCard({ code, bid, high, low, pctChange, image}: CoinCardProps) {
+    
   return (
-    <div className={pctChange >= 0 ? styles.cardCrypto: styles.cardCryptoNegative}>
+    <NavLink to={`/${code}`} className={pctChange >= 0 ? styles.cardCrypto: styles.cardCryptoNegative}>
             <div className={styles.cardHeader}>
                 <img src={image} />
                 <span> {'>'} </span>
@@ -25,6 +27,6 @@ export function CoinCard({ code, bid, high, low, pctChange, image}: CoinCardProp
                 <p>Low: {low}</p>
                 <span className={pctChange >= 0 ? styles.positivo : styles.negativo}>Variação: {pctChange}%</span>
             </div>
-        </div>
+    </NavLink>
   )
 }
