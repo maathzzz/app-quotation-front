@@ -1,12 +1,12 @@
 import './styles/global.css'
-import { Home } from './pages/Home'
+import { BrowserRouter } from 'react-router-dom'
+import { Router } from './router/router'
 
 function App() {
-
   return (
-    <>
-      <Home />
-    </>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   )
 }
 
