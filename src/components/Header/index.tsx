@@ -7,9 +7,8 @@ export function Header() {
     <header className={styles.header}>
         <img src={LogoZuviaDark} alt="Logotipo Zuvia"/>
         <div className={styles.options}>
-          <a href="#"> Zuvia </a>
-          <a href="https://zuvia.com.br/pay/"> ZuviaPay </a>
-          <a href="#"> About Zuvia </a>
+          <a href="https://zuvia.com.br/" target='__blank'> Zuvia </a>
+          <a href="https://zuvia.com.br/pay/" target='__blank'> Pay </a>
         </div>
 
             <a href="https://app.zuviapay.com.br/" className={styles.buyCripto} target='__blank'> 
