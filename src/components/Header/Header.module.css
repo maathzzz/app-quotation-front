@@ -18,7 +18,6 @@
 
 .header img {
     width: 8.188rem;
-    /* width: 7.188rem;  */
     cursor: pointer;
 }
 
@@ -68,4 +67,35 @@
 
 .options a:hover{
     color: var(--blue-500);
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+      flex-direction: row;
+      padding: 2rem;
+      height: auto;
+      gap: 1rem;
+    }
+  
+    .header img {
+      width: 8rem;
+    }
+
+    .options{
+        display: none;
+    }
+  
+    .buyCripto{
+        width: 8rem;
+    }
+
+    .login {
+      width: 100%;
+    }
+  
+    .options {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
 }

@@ -17,43 +17,35 @@ interface CoinList {
 
 export function Home() {
     const [ coinList, setCoinList ] = useState<CoinList[]>([])
-    
-    useEffect(() => {
-        const loginEndpoint = 'https://api-quotation.vercel.app/users/login';
-    
-    axios({
-        method: 'post',
-        url: loginEndpoint,
-        data: {
-            email: 'zedamanga@manga.com.bom',
-            password: '12345678'
-        }
-    })
-      .then(response => {
-        const token = response.data.token;
+
+    function getInfoCoin(){
         const coinListEndpoint = 'https://api-quotation.vercel.app/quotations/list';
     
-    axios({
-        method: 'get',
-        url: coinListEndpoint,
-        responseType: "json",
-        headers: {
-            'Authorization': `Bearer ${token}`
-        }
-    },)
-        .then(response => {
-        const coinList = response.data;
-        setCoinList(coinList)
-    })
-        .catch(error => {
-        console.error('Erro ao listar as criptomoedas:', error);
-    });
-    })
-        .catch(error => {
-        console.error('Erro de autenticação:', error);
-    });
+        axios({
+            method: 'get',
+            url: coinListEndpoint,
+            responseType: "json",
+        },)
+            .then(response => {
+            const coinList = response.data;
+            setCoinList(coinList)
+        })
+            .catch(error => {
+            console.error('Erro ao listar as criptomoedas:', error);
+        })
+            .catch(error => {
+            console.error('Erro de autenticação:', error);
+        });
 
-    }, [coinList])
+        }
+        
+        useEffect(() => {
+            const interval = setInterval(getInfoCoin, 5000);
+          
+            return () => {
+              clearInterval(interval);
+            };
+        }, []);
 
   return (
         <div className={styles.home}>
