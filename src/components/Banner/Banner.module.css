@@ -77,3 +77,45 @@
     font-weight: bold;
     color: var(--blue-500);
 }
+
+@media screen and (max-width: 768px) {
+    .content {
+      width: 90%;
+      height: auto;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .heading {
+      align-items: center;
+      text-align: center;
+      margin-top: 2rem;
+    }
+  
+    .title {
+      text-align: center;
+      line-height: 1;
+    }
+  
+    .zuviah1 {
+      font-size: 4rem;
+      margin-top: 1rem;
+    }
+  
+    .cotacaoh1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    .wallet {
+      width: 20rem;
+      height: 20rem;
+    }
+  
+    .p1,
+    .p2,
+    .p3 {
+      font-size: 1rem;
+    }
+}
