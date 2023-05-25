@@ -1,4 +1,5 @@
 import axios from "axios"
+import styles from '../PageCripto/PageCripto.module.css'
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import loading from '../../../public/animation/loading.gif'

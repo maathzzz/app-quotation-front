@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Header } from "../../components/Header";
 import styles from './Home.module.css'
 import axios from 'axios';
 import { CoinCard } from "../../components/CoinCard";
@@ -52,7 +51,6 @@ export function Home() {
 
   return (
         <div className={styles.home}>
-            <Header />
             <Banner />
             { coinList.length > 0 ? (
             <div className={styles.wrapper}>
