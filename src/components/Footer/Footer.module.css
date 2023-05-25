@@ -1,0 +1,126 @@
+.footer {
+    margin-top: 6rem;
+    width: 100%;
+    height: auto;
+    background: var(--blue-500);
+}
+
+.headerTwo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem;
+}
+
+.headerTwo h2 {
+    color: var(--white);
+}
+
+.iconsContainer{
+    width: 10rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    margin-top: 4rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.contentText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.contentText {
+    color: var(--white);
+}
+
+.contentText a {
+    color: var(--white);
+}
+
+.contentInput {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 7rem;
+}
+.contentInput p {
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.contentInput input {
+    width: 16.125rem;
+    height: 3.625rem;
+    border-radius: 8px;
+    border: none;
+}
+
+.content input::placeholder {
+    padding: 1rem;
+}
+
+form {
+    background: white;
+    border: 2px solid #ccc;
+    display: inline-block;
+    padding: 4px;
+    border-radius: 8px;
+}
+  
+form > input {
+    width: 20.125rem;
+    height: 3.625rem;
+    border-radius: 8px;
+    border: none;
+}
+  
+form > button {
+    background: var(--blue-700);
+    height: 3.4rem;
+    width: 11rem;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+
+    .footer {
+        height: auto;
+    }
+
+    .headerTwo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-top: 4rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .contentInput {
+        display: none;
+    }
+
+    form {
+        display: none;
+    }
+
+}
