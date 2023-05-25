@@ -13,7 +13,7 @@ interface CoinCardProps {
 export function CoinCard({ code, bid, high, low, pctChange, image}: CoinCardProps) {
     
   return (
-    <NavLink to={`/${code}`} className={pctChange >= 0 ? styles.cardCrypto: styles.cardCryptoNegative}>
+    <NavLink to={`/cripto/${code}`} className={pctChange >= 0 ? styles.cardCrypto: styles.cardCryptoNegative}>
             <div className={styles.cardHeader}>
                 <img src={image} />
                 <span> {'>'} </span>

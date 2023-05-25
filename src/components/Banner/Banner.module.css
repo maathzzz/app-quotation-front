@@ -1,5 +1,5 @@
 .banner {
-    width: 100vw;
+    width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -78,7 +78,7 @@
     color: var(--blue-500);
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 900px) {
     .content {
       width: 90%;
       height: auto;
@@ -109,8 +109,8 @@
     }
   
     .wallet {
-      width: 20rem;
-      height: 20rem;
+      width: 15rem;
+      height: 15rem;
     }
   
     .p1,

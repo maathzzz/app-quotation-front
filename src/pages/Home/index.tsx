@@ -40,6 +40,8 @@ export function Home() {
         }
         
         useEffect(() => {
+            getInfoCoin()
+
             const interval = setInterval(getInfoCoin, 5000);
           
             return () => {

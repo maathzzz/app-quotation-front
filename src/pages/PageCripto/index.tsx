@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import loading from '../../../public/animation/loading.gif'
 
 interface History {
     code?: string,
@@ -26,9 +27,7 @@ export default function PageCripto() {
     const [ history, setHistory ] = useState<CoinList["history"]>()
     const param = useParams()
 
-    // const history1: CoinList = {}
-
-    useEffect(() => {
+    async function getInfoCoin(){
         const infoCoinEndpoint = `https://api-quotation.vercel.app/quotations/${param.code}`
     
         axios({
@@ -36,32 +35,45 @@ export default function PageCripto() {
             url: infoCoinEndpoint,
             responseType: "json",
         },)
-            .then(response => {
-            const infoCoin = response.data;
+            .then(async response => {
+            const infoCoin = await response.data;
             setInfoCoin(infoCoin)
+            setHistory(infoCoin.history)
         })
             .catch(error => {
             console.error('Erro ao listar as criptomoedas:', error);
         });
+    }
 
-        setHistory(infoCoin.history)
-
-    }, [param.code, infoCoin.history])
+    useEffect(() => {
+        const interval = setInterval(getInfoCoin, 5000);
+          
+        return () => {
+            clearInterval(interval);
+        };
+    },)
 
     console.log(history)
-    // console.log(infoCoin)
 
   return (
     <div>
-        {infoCoin.bid}
-        {infoCoin.code}
-        {history?.map((coin) =>{
-            return ( 
+        { infoCoin ? (
+            <div> 
+                {infoCoin.bid}
+                {infoCoin.code}
+                {history?.map((coin, index) =>{
+                    return ( 
+                        <div key={index}> 
+                            {coin.bid}
+                        </div>
+                    )
+                })}
+            </div>
+            ) : (
                 <div> 
-                    {coin.bid}
+                    <img src={loading} />
                 </div>
-            )
-        })}
+            )}
     </div>
   )
 }
