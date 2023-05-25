@@ -7,10 +7,10 @@ export function Footer() {
         <div className={styles.headerTwo}>
             <h2>Sobre nós</h2>
             <div className={styles.iconsContainer}> 
-                <LinkedinLogo size={32} weight='fill' color='#FFFF'/>
-                <InstagramLogo size={32} weight='fill' color='#FFFF'/>
-                <TwitterLogo size={32} weight='fill' color='#FFFF'/>
-                <DiscordLogo size={32} weight='fill' color='#FFFF'/>
+                <LinkedinLogo size={40} weight='fill' color='#FFFF'/>
+                <InstagramLogo size={40} weight='fill' color='#FFFF'/>
+                <TwitterLogo size={40} weight='fill' color='#FFFF'/>
+                <DiscordLogo size={40} weight='fill' color='#FFFF'/>
             </div>
         </div>
         <div className={styles.content}>

@@ -9,15 +9,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 4rem;
+    padding: 3rem;
 }
 
 .headerTwo h2 {
+    font-size: 2rem;
     color: var(--white);
 }
 
 .iconsContainer{
-    width: 10rem;
+    width: 12rem;
     display: flex;
     justify-content: space-between;
 }
@@ -25,10 +26,10 @@
 .content {
     display: flex;
     justify-content: space-between;
-    height: auto;
-    margin-top: 4rem;
+    height: 16rem;
     margin-left: 2rem;
     margin-right: 2rem;
+    background: var(--blue-500);
 }
 
 .contentText {
@@ -94,7 +95,12 @@ form > button {
 }
 
 @media screen and (max-width: 768px) {
-
+    .iconsContainer{
+        width: 10rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    
     .footer {
         height: auto;
     }
