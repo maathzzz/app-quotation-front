@@ -27,31 +27,28 @@ export default function PageCripto() {
     const [ history, setHistory ] = useState<CoinList["history"]>()
     const param = useParams()
 
-    async function getInfoCoin(){
-        const infoCoinEndpoint = `https://api-quotation.vercel.app/quotations/${param.code}`
-    
-        axios({
-            method: 'get',
-            url: infoCoinEndpoint,
-            responseType: "json",
-        },)
-            .then(async response => {
-            const infoCoin = await response.data;
-            setInfoCoin(infoCoin)
-            setHistory(infoCoin.history)
-        })
-            .catch(error => {
-            console.error('Erro ao listar as criptomoedas:', error);
-        });
-    }
+    async function getInfoCoin() {
+        const infoCoinEndpoint = `https://api-quotation.vercel.app/quotations/${param.code}`;
+      
+        try {
+          const response = await axios.get(infoCoinEndpoint);
+          const infoCoin = response.data;
+          setInfoCoin(infoCoin);
+          setHistory(infoCoin.history);
+        } catch (error) {
+          console.error('Erro ao listar as criptomoedas:', error);
+        }
+      }
 
     useEffect(() => {
-        const interval = setInterval(getInfoCoin, 5000);
-          
+        getInfoCoin();
+      
+        const interval = setInterval(getInfoCoin, 10000);
+      
         return () => {
-            clearInterval(interval);
+          clearInterval(interval);
         };
-    },)
+      }, []);
 
     console.log(history)
 
@@ -59,6 +56,7 @@ export default function PageCripto() {
     <div>
         { infoCoin ? (
             <div> 
+                <img src={infoCoin.image} />
                 {infoCoin.bid}
                 {infoCoin.code}
                 {history?.map((coin, index) =>{
