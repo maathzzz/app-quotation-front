@@ -7,10 +7,18 @@ export function Footer() {
         <div className={styles.headerTwo}>
             <h2>Sobre nós</h2>
             <div className={styles.iconsContainer}> 
-                <LinkedinLogo size={40} weight='fill' color='#FFFF'/>
-                <InstagramLogo size={40} weight='fill' color='#FFFF'/>
-                <TwitterLogo size={40} weight='fill' color='#FFFF'/>
-                <DiscordLogo size={40} weight='fill' color='#FFFF'/>
+                <a href="https://www.linkedin.com/company/zuvia/" target='_blank'>
+                    <LinkedinLogo size={40} weight='fill' color='#FFFF'/>
+                </a>
+                <a href="https://www.instagram.com/zuviatechnology/" target='_blank'>
+                    <InstagramLogo size={40} weight='fill' color='#FFFF'/>
+                </a>
+                <a href="https://twitter.com/zuviatechnology" target='_blank'>
+                    <TwitterLogo size={40} weight='fill' color='#FFFF'/>
+                </a>
+                <a href="https://discord.com/invite/GPN4eQUcAN" target='_blank'>
+                    <DiscordLogo size={40} weight='fill' color='#FFFF'/>
+                </a>
             </div>
         </div>
         <div className={styles.content}>
