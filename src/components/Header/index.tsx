@@ -5,7 +5,7 @@ import LogoZuviaDark from '../../../public/images/logoZuviaDark.png'
 export function Header() {
   return (
     <header className={styles.header}>
-        <a href="/" target='__blank'>
+        <a href="/">
           <img src={LogoZuviaDark} alt="Logotipo Zuvia"/>
         </a>
         <div className={styles.options}>
