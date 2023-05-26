@@ -28,10 +28,14 @@ interface InfoCoin {
 export default function PageCripto() {
     const [ infoCoin, setInfoCoin ] = useState<InfoCoin>({} as InfoCoin)
     const [ history, setHistory ] = useState<InfoCoin["history"]>()
+
     const param = useParams()
+    const [ coin, setCoin ] = useState<string | undefined>(param.code)
+
+
 
     async function getInfoCoin() {
-        const infoCoinEndpoint = `https://api-quotation.vercel.app/quotations/${param.code}`;
+        const infoCoinEndpoint = `https://api-quotation.vercel.app/quotations/${coin}`;
       
         try {
           const response = await axios.get(infoCoinEndpoint);
@@ -53,9 +57,10 @@ export default function PageCripto() {
         };
       }, []);
 
-    console.log(history)
+    // console.log(history)
 
   return (
+
     <div className={styles.container}>
       <div className={styles.coinInfoContainer}>
         <div className={styles.coinInfoHeader}>
