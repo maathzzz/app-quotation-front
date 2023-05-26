@@ -54,7 +54,7 @@ export default function PageCripto() {
     console.log(history)
 
   return (
-    <div>
+    <div className={styles.container}>
         { infoCoin ? (
             <div> 
                 <img src={infoCoin.image} />
