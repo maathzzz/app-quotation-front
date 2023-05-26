@@ -34,6 +34,8 @@ export default function PageCripto() {
 
     console.log(param)
 
+    const formattedPercentage = infoCoin.pctChange + "%"
+
 
 
     async function getInfoCoin() {
@@ -74,9 +76,63 @@ export default function PageCripto() {
         </div>
 
         <div className={styles.coinInfoBody}>
-            <p> {infoCoin.description}</p>
+            <p className={styles.description}> {infoCoin.description}</p>
+
+            <div className={styles.divider}>
+            </div>
+
+            <div className={styles.data}>
+              <div className={styles.column}>
+                <p> Maior (24h) </p>
+                <span className={styles.prices}> {infoCoin.high} </span>
+              </div>
+              <div className={styles.column}>
+                <p> Menor (24h) </p>
+                <span className={styles.prices}> {infoCoin.low} </span>
+              </div> 
+              <div className={styles.column}>
+                  <p> Preço Unitário </p>
+                  <span className={styles.price}> {infoCoin.bid}  </span>
+              </div>
+              <div className={styles.column}>
+                  <p> Variação </p>
+                  <span className={infoCoin.pctChange >= 0 ? styles.pctChangePositive : styles.pctChangeNegative}> {formattedPercentage} </span>
+              </div>
+            </div>
+
+            <div className={styles.divider}>
+            </div>
         </div>
       </div>
+
+      <div>
+        <table>
+          <thead>
+              <tr>
+                  <th> Preços </th>
+                  <th> Maior </th>
+                  <th> Menor </th>
+                  <th> Variação </th>
+              </tr>
+          </thead>
+          <tbody>
+            {history?.map((day, index) => {
+              return (
+                <tr key={index}>
+                  <td> {day.bid} </td>
+                  <td> {day.high} </td>
+                  <td> {day.low} </td>
+                  <td> 
+                    {day.pctChange} 
+                    
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
+
     </div>
   )
 }
