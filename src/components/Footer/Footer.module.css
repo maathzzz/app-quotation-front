@@ -2,7 +2,7 @@
     margin-top: 6rem;
     width: 100%;
     height: auto;
-    background: var(--blue-500);
+    background: var(--blue-700);
 }
 
 .headerTwo {
@@ -33,7 +33,6 @@
     height: 16rem;
     margin-left: 2rem;
     margin-right: 2rem;
-    background: var(--blue-500);
 }
 
 .contentText {
