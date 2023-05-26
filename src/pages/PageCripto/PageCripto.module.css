@@ -3,6 +3,7 @@
     padding: 4rem;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1rem
 }
 
@@ -181,7 +182,7 @@ th {
 }
 
 td {
-    background-color: gray;
+    background-color: var(--black);
     border-top: 4px solid #F1F6FF;
     padding: 1rem;
     color: white;
