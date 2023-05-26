@@ -8,6 +8,7 @@ import { Footer } from "../../components/Footer/Footer";
 
 interface CoinList {
     code: string,
+    name: string,
     bid: string,
     high: string,
     low: string,
@@ -58,10 +59,9 @@ export function Home() {
                     return (
                         <CoinCard 
                             key={coin.bid} 
+                            name={coin.name}
                             bid={coin.bid} 
                             code={coin.code} 
-                            high={coin.high} 
-                            low={coin.low} 
                             pctChange={coin.pctChange}
                             image={coin.image}
                         />

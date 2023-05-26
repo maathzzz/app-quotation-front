@@ -3,14 +3,13 @@ import styles from './CoinCard.module.css'
 
 interface CoinCardProps {
     code: string,
+    name: string
     bid: string,
-    high: string,
-    low: string,
     pctChange: number,
     image: string,
 }
 
-export function CoinCard({ code, bid, high, low, pctChange, image}: CoinCardProps) {
+export function CoinCard({ code, bid, pctChange, image, name}: CoinCardProps) {
     
   return (
     <NavLink to={`/cripto/${code}`} className={pctChange >= 0 ? styles.cardCrypto: styles.cardCryptoNegative}>
@@ -20,11 +19,10 @@ export function CoinCard({ code, bid, high, low, pctChange, image}: CoinCardProp
             </div>
             <div className={styles.cardCryptoName}>
                 <h2>{code}</h2>
+                <span>{name}</span>
                 <h3>{bid}</h3>
             </div>
             <div className={styles.cardCriptoMarket}>
-                <p>High: {high}</p>
-                <p>Low: {low}</p>
                 <span className={pctChange >= 0 ? styles.positivo : styles.negativo}>Variação: {pctChange}%</span>
             </div>
     </NavLink>
