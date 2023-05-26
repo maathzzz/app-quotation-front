@@ -2,7 +2,7 @@ import axios from "axios"
 import styles from '../PageCripto/PageCripto.module.css'
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import loading from '../../../public/animation/loading.gif'
+// import loading from '../../../public/animation/loading.gif'
 
 interface History {
     code?: string,
@@ -12,8 +12,10 @@ interface History {
     pctChange?: number,
 }
 
-interface CoinList {
+interface InfoCoin {
+    description: string,
     code: string,
+    name: string,
     bid: string,
     high: string,
     low: string,
@@ -24,8 +26,8 @@ interface CoinList {
 
 
 export default function PageCripto() {
-    const [ infoCoin, setInfoCoin ] = useState<CoinList>({} as CoinList)
-    const [ history, setHistory ] = useState<CoinList["history"]>()
+    const [ infoCoin, setInfoCoin ] = useState<InfoCoin>({} as InfoCoin)
+    const [ history, setHistory ] = useState<InfoCoin["history"]>()
     const param = useParams()
 
     async function getInfoCoin() {
@@ -55,24 +57,19 @@ export default function PageCripto() {
 
   return (
     <div className={styles.container}>
-        { infoCoin ? (
-            <div> 
-                <img src={infoCoin.image} />
-                {infoCoin.bid}
-                {infoCoin.code}
-                {history?.map((coin, index) =>{
-                    return ( 
-                        <div key={index}> 
-                            {coin.bid}
-                        </div>
-                    )
-                })}
-            </div>
-            ) : (
-                <div> 
-                    <img src={loading} />
-                </div>
-            )}
+      <div className={styles.coinInfoContainer}>
+        <div className={styles.coinInfoHeader}>
+          <div className={styles.coinInfoTitle}>
+            <h1>{infoCoin.name}</h1>
+            <span>{infoCoin.code}</span>
+          </div>
+          <img src={infoCoin.image} />
+        </div>
+
+        <div className={styles.coinInfoBody}>
+            <p> {infoCoin.description}</p>
+        </div>
+      </div>
     </div>
   )
 }

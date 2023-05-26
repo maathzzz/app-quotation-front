@@ -1,3 +1,57 @@
 .container {
     width: 100%;
+    padding: 4rem;
+}
+
+.coinInfoContainer {
+    width: 45rem;
+    height: 30rem;
+    border-radius: 30px;
+
+    padding: 2rem;
+    background: var(--blue-700);
+}
+
+.coinInfoHeader {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coinInfoTitle {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.coinInfoTitle h1 {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+.coinInfoTitle span {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 2rem;
+    opacity: 60%;
+}
+
+.coinInfoHeader img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.coinInfoBody {
+    margin-top: 3rem;
+}
+
+.coinInfoBody p {
+    color: var(--white);
+    font-weight: 400;
+    font-size: 1.2rem;
 }
