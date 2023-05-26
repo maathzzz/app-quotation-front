@@ -30,7 +30,7 @@ export default function PageCripto() {
     const [ history, setHistory ] = useState<InfoCoin["history"]>()
 
     const param = useParams()
-    const [ coin, setCoin ] = useState<string | undefined>(param.code)
+    const [ coin ] = useState<string | undefined>(param.code)
 
 
 
@@ -57,7 +57,7 @@ export default function PageCripto() {
         };
       }, []);
 
-    // console.log(history)
+    console.log(history)
 
   return (
 
