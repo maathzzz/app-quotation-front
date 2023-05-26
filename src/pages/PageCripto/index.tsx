@@ -32,6 +32,8 @@ export default function PageCripto() {
     const param = useParams()
     const [ coin ] = useState<string | undefined>(param.code)
 
+    console.log(param)
+
 
 
     async function getInfoCoin() {
