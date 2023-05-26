@@ -124,7 +124,7 @@ export default function PageCripto() {
                   <td> {day.low} </td>
                   <td> 
                     {day.pctChange} 
-                    
+
                   </td>
                 </tr>
               )
