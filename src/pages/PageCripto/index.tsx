@@ -2,7 +2,7 @@ import axios from "axios"
 import styles from '../PageCripto/PageCripto.module.css'
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-// import loading from '../../../public/animation/loading.gif'
+import loading from '../../../public/animation/loading.gif'
 
 interface History {
     code?: string,
@@ -29,6 +29,8 @@ interface InfoCoin {
 export default function PageCripto() {
     const [ infoCoin, setInfoCoin ] = useState<InfoCoin>({} as InfoCoin)
     const [ history, setHistory ] = useState<InfoCoin["history"]>()
+    const [isLoading, setIsLoading] = useState(true);
+
 
     const param = useParams()
     const [ coin ] = useState<string | undefined>(param.code)
@@ -40,6 +42,9 @@ export default function PageCripto() {
     const formattedLow = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(infoCoin.low)
     const formattedPercentage = infoCoin.pctChange + "%"
 
+    
+    
+  
 
 
     async function getInfoCoin() {
@@ -65,10 +70,26 @@ export default function PageCripto() {
         };
       }, []);
 
+      useEffect(() => {
+        const timer = setTimeout(() => {
+          setIsLoading(false);
+        }, 500);
+    
+        return () => {
+          clearTimeout(timer);
+        };
+      }, []);
+    
+      if (isLoading) {
+        return (
+          <div className={styles.loading}>
+            <img src={loading} alt="Loading" />
+          </div>
+        );
+      }
     console.log(history)
 
   return (
-
     <div className={styles.container}>
       <div className={styles.coinInfoContainer}>
         <div className={styles.coinInfoHeader}>

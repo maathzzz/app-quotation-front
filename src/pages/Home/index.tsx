@@ -50,6 +50,7 @@ export function Home() {
             };
         }, []);
 
+
   return (
         <div className={styles.home}>
             <Banner />
