@@ -9,7 +9,7 @@ import { Footer } from "../../components/Footer/Footer";
 interface CoinList {
     code: string,
     name: string,
-    bid: string,
+    bid: number,
     high: string,
     low: string,
     pctChange: number,
@@ -56,6 +56,7 @@ export function Home() {
             { coinList.length > 0 ? (
             <div className={styles.wrapper}>
                 {coinList.map(coin => {
+                    console.log(coin.bid)
                     return (
                         <CoinCard 
                             key={coin.bid} 
