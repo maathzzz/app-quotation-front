@@ -4,12 +4,13 @@ import styles from './CoinCard.module.css'
 interface CoinCardProps {
     code: string,
     name: string
-    bid: string,
+    bid: number,
     pctChange: number,
     image: string,
 }
 
 export function CoinCard({ code, bid, pctChange, image, name}: CoinCardProps) {
+  const formattedBid = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(bid)
     
   return (
     <NavLink to={`/cripto/${code}`} className={pctChange >= 0 ? styles.cardCrypto: styles.cardCryptoNegative}>
@@ -20,7 +21,7 @@ export function CoinCard({ code, bid, pctChange, image, name}: CoinCardProps) {
             <div className={styles.cardCryptoName}>
                 <h2>{code}</h2>
                 <span>{name}</span>
-                <h3>{bid}</h3>
+                <h3>{formattedBid}</h3>
             </div>
             <div className={styles.cardCriptoMarket}>
                 <span className={pctChange >= 0 ? styles.positivo : styles.negativo}>Variação: {pctChange}%</span>

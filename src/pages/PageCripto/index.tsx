@@ -16,9 +16,9 @@ interface InfoCoin {
     description: string,
     code: string,
     name: string,
-    bid: string,
-    high: string,
-    low: string,
+    bid: number,
+    high: number,
+    low: number,
     history: History[],
     pctChange: number,
     image: string,
@@ -34,6 +34,9 @@ export default function PageCripto() {
 
     console.log(param)
 
+    const formattedBid = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(infoCoin.bid)
+    const formattedHigh = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(infoCoin.high)
+    const formattedLow = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(infoCoin.low)
     const formattedPercentage = infoCoin.pctChange + "%"
 
 
@@ -84,15 +87,15 @@ export default function PageCripto() {
             <div className={styles.data}>
               <div className={styles.column}>
                 <p> Maior (24h) </p>
-                <span className={styles.prices}> {infoCoin.high} </span>
+                <span className={styles.prices}> {formattedHigh} </span>
               </div>
               <div className={styles.column}>
                 <p> Menor (24h) </p>
-                <span className={styles.prices}> {infoCoin.low} </span>
+                <span className={styles.prices}> {formattedLow} </span>
               </div> 
               <div className={styles.column}>
                   <p> Preço Unitário </p>
-                  <span className={styles.price}> {infoCoin.bid}  </span>
+                  <span className={styles.price}> {formattedBid}  </span>
               </div>
               <div className={styles.column}>
                   <p> Variação </p>
