@@ -9,7 +9,7 @@
 
 .coinInfoContainer {
     width: 40rem;
-    height: 30rem;
+    height: auto;
     border-radius: 30px;
 
     padding: 2rem;
@@ -30,6 +30,7 @@
     display: flex;
     flex-direction: row;
     text-align: center;
+    align-items: baseline;
     gap: 0.5rem;
 }
 
@@ -153,11 +154,38 @@
     height: 2rem;
 } 
 
+.coinInfoFooter {
+    width: 100%;
+    height: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.coinInfoFooter div {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.coinInfoFooter p {
+    font-size: 1.275rem;
+    font-weight: 700;
+    color: var(--white);
+    opacity: 60%;
+}
+
+.coinInfoFooter span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
 
 table {
-    width: 10rem;
+    width: 100%;
     border-collapse: collapse;
-    min-width: 10rem;
 }
 
 th {
@@ -211,6 +239,10 @@ td {
     .coinInfoContainer {
       width: 22rem;
       height: auto;
+    }
+
+    th, td {
+        font-size: 12px;
     }
 
     .coinInfoHeader {

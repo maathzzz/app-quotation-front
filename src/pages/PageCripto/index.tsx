@@ -22,6 +22,7 @@ interface InfoCoin {
     history: History[],
     pctChange: number,
     image: string,
+    launch: string,
 }
 
 
@@ -104,6 +105,12 @@ export default function PageCripto() {
             </div>
 
             <div className={styles.divider}>
+            </div>
+            <div className={styles.coinInfoFooter}>
+              <div>
+                <p>Lançamento</p>
+                <span>{infoCoin.launch}</span>   
+              </div>
             </div>
         </div>
       </div>
