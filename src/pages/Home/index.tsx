@@ -4,7 +4,6 @@ import axios from 'axios';
 import { CoinCard } from "../../components/CoinCard";
 import { Banner } from "../../components/Banner";
 import loading from "../../../public/animation/loading.gif"
-import { Footer } from "../../components/Footer/Footer";
 
 interface CoinList {
     code: string,
