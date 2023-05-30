@@ -116,6 +116,9 @@ export default function PageCripto() {
       </div>
 
       <div>
+        <div className={styles.lastQuotations}>
+          <h2> Últimas Cotações</h2>
+        </div>
         <table>
           <thead>
               <tr>
@@ -132,10 +135,7 @@ export default function PageCripto() {
                   <td> {day.bid} </td>
                   <td> {day.high} </td>
                   <td> {day.low} </td>
-                  <td> 
-                    {day.pctChange} 
-
-                  </td>
+                  <td> {day.pctChange} </td>
                 </tr>
               )
             })}

@@ -83,7 +83,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
@@ -182,6 +181,17 @@
     color: var(--white);
 }
 
+.lastQuotations {
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 1rem;
+}
+
+.lastQuotations h2 {
+    color: var(--black);
+    font-size: 2rem;
+    font-weight: 900;
+}
 
 table {
     width: 100%;
@@ -269,6 +279,20 @@ td {
         flex-direction: column;
         gap: 1rem;
         margin-bottom: 1.5rem;
+    }
+
+    .lastQuotations {
+        width: 100%;
+        height: 2rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .lastQuotations h2 {
+        color: var(--black);
+        font-size: 1.5rem;
+        font-weight: 900;
     }
 }
   
