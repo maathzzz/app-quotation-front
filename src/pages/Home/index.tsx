@@ -75,8 +75,6 @@ export function Home() {
                     <img src={loading} />
                 </div>
             )}
-            
-            <Footer />
         </div>
   )
 }
