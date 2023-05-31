@@ -92,7 +92,7 @@ export default function PageCripto() {
       <div className={styles.coinInfoContainer}>
         <div className={styles.coinInfoHeader}>
           <div className={styles.coinInfoTitle}>
-            <h1>{infoCoin.name}</h1>
+            <h1 style={{ color: `var(--${infoCoin.code})`}}>{infoCoin.name}</h1>
             <span>{infoCoin.code}</span>
           </div>
           <img src={infoCoin.image} />
@@ -162,7 +162,7 @@ export default function PageCripto() {
                   <td > {day.bid} </td>
                   <td> {day.high} </td>
                   <td> {day.low} </td>
-                  <td style={day.pctChange !== undefined && day.pctChange >= 0 ? {color: 'green', fontWeight: 'bold'} : {color: 'red', fontWeight: 'bold'}}> {day.pctChange} </td>
+                  <td style={day.pctChange !== undefined && day.pctChange >= 0 ? {color: '#00b73e', fontWeight: 'bold'} : {color: 'red', fontWeight: 'bold'}}> {day.pctChange} </td>
                   <td> {formattedDate}</td>
                 </tr>
               )

@@ -14,11 +14,11 @@
     --red-500: #ad2424;
     --BTC: orange;
     --DOGE: rgb(233, 187, 101);
-    --ETH: #1A1D56;
+    --ETH: #7f86ff;
     --EUR: #009FE3;
-    --USD: green;
+    --USD: #00b73e;
     --CAD: rgb(105, 198, 105);
-    --LTC: #161eaf;
+    --LTC: #a5a9f2;
 }
 
 :focus {
