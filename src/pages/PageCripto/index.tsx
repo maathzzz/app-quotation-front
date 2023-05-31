@@ -33,7 +33,6 @@ export default function PageCripto() {
     const [ history, setHistory ] = useState<InfoCoin["history"]>()
     const [isLoading, setIsLoading] = useState(true);
 
-
     const param = useParams()
     const [ coin ] = useState<string | undefined>(param.code)
 
@@ -76,7 +75,7 @@ export default function PageCripto() {
           clearTimeout(timer);
         };
       }, []);
-      console.log(infoCoin.name)
+
       if (isLoading) {
         return (
           <div className={styles.loading}>

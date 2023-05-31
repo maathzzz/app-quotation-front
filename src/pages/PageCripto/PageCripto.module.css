@@ -1,9 +1,11 @@
 @keyframes transitionIn {
     from{
+        transform: translate(-300px);
         opacity: 0;
         transform: translate(10deg, 10deg)
     }
     to{
+        transform: (0);
         opacity: 1;
         transform: translate(0, 0);
     }
