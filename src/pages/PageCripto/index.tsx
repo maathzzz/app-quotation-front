@@ -3,6 +3,8 @@ import styles from '../PageCripto/PageCripto.module.css'
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import loading from '../../../public/animation/loading.gif'
+// import { formatDistanceToNow } from 'date-fns'
+// import { ptBR } from "date-fns/locale"
 
 interface History {
     code?: string,
@@ -10,6 +12,7 @@ interface History {
     high?: string,
     low?: string,
     pctChange?: number,
+    timestamp: string,
 }
 
 interface InfoCoin {
@@ -87,7 +90,7 @@ export default function PageCripto() {
           </div>
         );
       }
-    console.log(history)
+    // console.log(history)
 
   return (
     <div className={styles.container}>
@@ -138,7 +141,7 @@ export default function PageCripto() {
 
       <div>
         <div className={styles.lastQuotations}>
-          <h2> Últimas Cotações</h2>
+          <h2> Últimas Cotações <strong>{infoCoin.name}</strong></h2>
         </div>
         <table>
           <thead>
@@ -147,16 +150,27 @@ export default function PageCripto() {
                   <th> Maior </th>
                   <th> Menor </th>
                   <th> Variação </th>
+                  <th> Data </th>
               </tr>
           </thead>
           <tbody>
             {history?.map((day, index) => {
+              const formattedDate = (new Date(day.timestamp)).toLocaleDateString('pt-BR')
+              // console.log(formattedDate)
+
+              
+              // const formattedDate = formatDistanceToNow(new Date(day.timestamp), {
+              //   addSuffix: true,
+              //   locale: ptBR
+              // })
+
               return (
-                <tr key={index}>
-                  <td> {day.bid} </td>
+                <tr key={index} >
+                  <td > {day.bid} </td>
                   <td> {day.high} </td>
                   <td> {day.low} </td>
-                  <td> {day.pctChange} </td>
+                  <td style={day.pctChange !== undefined && day.pctChange >= 0 ? {color: 'green', fontWeight: 'bold'} : {color: 'red', fontWeight: 'bold'}}> {day.pctChange} </td>
+                  <td> {formattedDate}</td>
                 </tr>
               )
             })}
