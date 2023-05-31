@@ -28,6 +28,10 @@ interface InfoCoin {
     launch: string,
 }
 
+interface colorCoinVariants {
+  bitcoin: 'orange'
+}
+
 
 export default function PageCripto() {
     const [ infoCoin, setInfoCoin ] = useState<InfoCoin>({} as InfoCoin)
@@ -77,11 +81,12 @@ export default function PageCripto() {
           clearTimeout(timer);
         };
       }, []);
-    
+      console.log(infoCoin.name)
       if (isLoading) {
         return (
           <div className={styles.loading}>
-            <img src={loading} alt="Loading" />
+            {/* <img src={loading} alt="Loading" /> */}
+            <div className={styles.ldscircle}> <div style={{ background: `var(--${infoCoin.code})`}}></div></div>
           </div>
         );
       }
@@ -151,7 +156,7 @@ export default function PageCripto() {
           <tbody>
             {history?.map((day, index) => {
               const formattedDate = (new Date(day.timestamp)).toLocaleDateString('pt-BR')
-              
+
               // const formattedDate = formatDistanceToNow(new Date(day.timestamp), {
               //   addSuffix: true,
               //   locale: ptBR
