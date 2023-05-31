@@ -38,17 +38,12 @@ export default function PageCripto() {
     const param = useParams()
     const [ coin ] = useState<string | undefined>(param.code)
 
-    console.log(param)
+    // console.log(param)
 
     const formattedBid = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(infoCoin.bid)
     const formattedHigh = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(infoCoin.high)
     const formattedLow = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(infoCoin.low)
     const formattedPercentage = infoCoin.pctChange + "%"
-
-    
-    
-  
-
 
     async function getInfoCoin() {
         const infoCoinEndpoint = `https://api-quotation.vercel.app/quotations/${coin}`;
@@ -156,8 +151,6 @@ export default function PageCripto() {
           <tbody>
             {history?.map((day, index) => {
               const formattedDate = (new Date(day.timestamp)).toLocaleDateString('pt-BR')
-              // console.log(formattedDate)
-
               
               // const formattedDate = formatDistanceToNow(new Date(day.timestamp), {
               //   addSuffix: true,
