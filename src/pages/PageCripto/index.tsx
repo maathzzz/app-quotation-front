@@ -125,7 +125,7 @@ export default function PageCripto() {
             <div className={styles.coinInfoFooter}>
               <div>
                 <p>Lançamento</p>
-                <span>{infoCoin.launch}</span>   
+                <span style={{ color: `var(--${infoCoin.code})`}}>{infoCoin.launch}</span>   
               </div>
             </div>
         </div>
