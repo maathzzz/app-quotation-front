@@ -71,7 +71,7 @@ export function Home() {
             </div>
             ) : (
                 <div className={styles.loading}> 
-                    <img src={loading} />
+                    <div className={styles.ldscircle}> <div style={{ background: `var(--blue-500)`}}></div></div>
                 </div>
             )}
         </div>
