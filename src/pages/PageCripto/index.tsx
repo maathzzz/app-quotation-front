@@ -79,12 +79,10 @@ export default function PageCripto() {
       if (isLoading) {
         return (
           <div className={styles.loading}>
-            {/* <img src={loading} alt="Loading" /> */}
             <div className={styles.ldscircle}> <div style={{ background: `var(--${infoCoin.code})`}}></div></div>
           </div>
         );
       }
-    // console.log(history)
 
   return (
     <div className={styles.container}>
