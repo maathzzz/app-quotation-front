@@ -9,11 +9,8 @@
     }
 }
 
-body {
-    animation: transitionIn 1s;
-}
-
 .wrapper {
+    animation: transitionIn 1s;
     display: flex;
     align-items: center;
     justify-content: center;
