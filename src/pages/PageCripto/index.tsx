@@ -2,7 +2,6 @@ import axios from "axios"
 import styles from '../PageCripto/PageCripto.module.css'
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import loading from '../../../public/animation/loading.gif'
 // import { formatDistanceToNow } from 'date-fns'
 // import { ptBR } from "date-fns/locale"
 
@@ -26,10 +25,6 @@ interface InfoCoin {
     pctChange: number,
     image: string,
     launch: string,
-}
-
-interface colorCoinVariants {
-  bitcoin: 'orange'
 }
 
 
