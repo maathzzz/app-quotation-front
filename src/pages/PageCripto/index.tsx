@@ -2,6 +2,7 @@ import axios from "axios"
 import styles from '../PageCripto/PageCripto.module.css'
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { CoinConverter } from "./components/CoinConverter"
 // import { formatDistanceToNow } from 'date-fns'
 // import { ptBR } from "date-fns/locale"
 
@@ -86,88 +87,92 @@ export default function PageCripto() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.coinInfoContainer}>
-        <div className={styles.coinInfoHeader}>
-          <div className={styles.coinInfoTitle}>
-            <h1 style={{ color: `var(--${infoCoin.code})`}}>{infoCoin.name}</h1>
-            <span>{infoCoin.code}</span>
+      <div className={styles.containerRow}>
+        <div className={styles.coinInfoContainer}>
+          <div className={styles.coinInfoHeader}>
+            <div className={styles.coinInfoTitle}>
+              <h1 style={{ color: `var(--${infoCoin.code})`}}>{infoCoin.name}</h1>
+              <span>{infoCoin.code}</span>
+            </div>
+            <img src={infoCoin.image} />
           </div>
-          <img src={infoCoin.image} />
+
+          <div className={styles.coinInfoBody}>
+              <p className={styles.description}> {infoCoin.description}</p>
+
+              <div className={styles.divider}>
+              </div>
+
+              <div className={styles.data}>
+                <div className={styles.column}>
+                  <p> Maior (24h) </p>
+                  <span className={styles.prices}> {formattedHigh} </span>
+                </div>
+                <div className={styles.column}>
+                  <p> Menor (24h) </p>
+                  <span className={styles.prices}> {formattedLow} </span>
+                </div> 
+                <div className={styles.column}>
+                    <p> Preço Unitário </p>
+                    <span className={styles.price}> {formattedBid}  </span>
+                </div>
+                <div className={styles.column}>
+                    <p> Variação </p>
+                    <span className={infoCoin.pctChange >= 0 ? styles.pctChangePositive : styles.pctChangeNegative}> {formattedPercentage} </span>
+                </div>
+              </div>
+
+              <div className={styles.divider}>
+              </div>
+              <div className={styles.coinInfoFooter}>
+                <div>
+                  <p>Lançamento</p>
+                  <span style={{ color: `var(--${infoCoin.code})`}}>{infoCoin.launch}</span>   
+                </div>
+              </div>
+          </div>
         </div>
 
-        <div className={styles.coinInfoBody}>
-            <p className={styles.description}> {infoCoin.description}</p>
-
-            <div className={styles.divider}>
-            </div>
-
-            <div className={styles.data}>
-              <div className={styles.column}>
-                <p> Maior (24h) </p>
-                <span className={styles.prices}> {formattedHigh} </span>
-              </div>
-              <div className={styles.column}>
-                <p> Menor (24h) </p>
-                <span className={styles.prices}> {formattedLow} </span>
-              </div> 
-              <div className={styles.column}>
-                  <p> Preço Unitário </p>
-                  <span className={styles.price}> {formattedBid}  </span>
-              </div>
-              <div className={styles.column}>
-                  <p> Variação </p>
-                  <span className={infoCoin.pctChange >= 0 ? styles.pctChangePositive : styles.pctChangeNegative}> {formattedPercentage} </span>
-              </div>
-            </div>
-
-            <div className={styles.divider}>
-            </div>
-            <div className={styles.coinInfoFooter}>
-              <div>
-                <p>Lançamento</p>
-                <span style={{ color: `var(--${infoCoin.code})`}}>{infoCoin.launch}</span>   
-              </div>
-            </div>
-        </div>
-      </div>
-
-      <div>
-        <div className={styles.lastQuotations}>
-          <h2> Últimas Cotações <strong>{infoCoin.name}</strong></h2>
-        </div>
-        <table>
-          <thead>
-              <tr>
-                  <th> Preços </th>
-                  <th> Maior </th>
-                  <th> Menor </th>
-                  <th> Variação </th>
-                  <th> Data </th>
-              </tr>
-          </thead>
-          <tbody>
-            {history?.map((day, index) => {
-              const formattedDate = (new Date(day.timestamp)).toLocaleDateString('pt-BR')
-
-              // const formattedDate = formatDistanceToNow(new Date(day.timestamp), {
-              //   addSuffix: true,
-              //   locale: ptBR
-              // })
-
-              return (
-                <tr key={index} >
-                  <td > {day.bid} </td>
-                  <td> {day.high} </td>
-                  <td> {day.low} </td>
-                  <td style={day.pctChange !== undefined && day.pctChange >= 0 ? {color: '#00b73e', fontWeight: 'bold'} : {color: 'red', fontWeight: 'bold'}}> {day.pctChange} </td>
-                  <td> {formattedDate}</td>
+        <div className={styles.historyContainer}>
+          <div className={styles.lastQuotations}>
+            <h2> Últimas Cotações <strong>{infoCoin.name}</strong></h2>
+          </div>
+          <table>
+            <thead>
+                <tr>
+                    <th> Preços </th>
+                    <th> Maior </th>
+                    <th> Menor </th>
+                    <th> Variação </th>
+                    <th> Data </th>
                 </tr>
-              )
-            })}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {history?.map((day, index) => {
+                const formattedDate = (new Date(day.timestamp)).toLocaleDateString('pt-BR')
 
+                // const formattedDate = formatDistanceToNow(new Date(day.timestamp), {
+                //   addSuffix: true,
+                //   locale: ptBR
+                // })
+
+                return (
+                  <tr key={index} >
+                    <td > {day.bid} </td>
+                    <td> {day.high} </td>
+                    <td> {day.low} </td>
+                    <td style={day.pctChange !== undefined && day.pctChange >= 0 ? {color: '#00b73e', fontWeight: 'bold'} : {color: 'red', fontWeight: 'bold'}}> {day.pctChange} </td>
+                    <td> {formattedDate}</td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div className={styles.coinConverter}>
+        <CoinConverter coinPrice={infoCoin.bid} coinName={infoCoin.name}/>
+      </div>
     </div>
   )
 }
