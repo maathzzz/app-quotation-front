@@ -445,6 +445,10 @@ td {
     .coinInfoTitle span {
         font-size: 1.5rem;
     }
+
+    .coinConverter {
+        display: none;
+    }
 }
 
 @media (max-width: 280px) {
