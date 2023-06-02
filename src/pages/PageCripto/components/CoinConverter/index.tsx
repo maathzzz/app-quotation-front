@@ -61,6 +61,7 @@ export function CoinConverter({coinPrice, coinName}: coinPrice){
           placeholder="R$ (BRL)"
           onInput={handleRealInputChange}
           ref={input1Ref}
+          className={styles.input}
         />
         <input
           type="number"
@@ -68,9 +69,10 @@ export function CoinConverter({coinPrice, coinName}: coinPrice){
           placeholder={`${coinName}`}
           onInput={handleCoinInputChange}
           ref={input2Ref}
+          className={styles.input}
         />
       </div>
-      <button onClick={inverterElementos}><Repeat weight='fill' color="#FFFF" size={24}/></button>
+      <button className={styles.button} onClick={inverterElementos}><Repeat weight='fill' color="#FFFF" size={24}/></button>
     </div>
   );
 }
