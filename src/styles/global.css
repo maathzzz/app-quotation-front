@@ -26,6 +26,10 @@
     box-shadow: 0 0 0 2px var(--green-500)
 }
 
+::-webkit-scrollbar {
+    width: 1px;
+}
+
 body {
     background: #f1f6ff;
     -webkit-font-smoothin: antialiased;
